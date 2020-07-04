@@ -10,9 +10,15 @@
 3 July 2020:  
 - Initial commit
 
+----------
+
+
 ### INSTALL
 
 In the project directory, you can run:
+
+#### `npm install`
+To download all the necessary ```node_modules```
 
 #### `npm start`
 
