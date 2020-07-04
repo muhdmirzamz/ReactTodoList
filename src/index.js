@@ -1,13 +1,67 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
+
+class CustomForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {obj: {id: 0, text: ''}, valueArr: []};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({obj: {id: this.state.valueArr.length, text: event.target.value}});
+  }
+
+  handleSubmit(event) {
+    // .map((item) => (item) copies over the items and returns a new, exact copy array
+    var tmpArr = this.state.valueArr.map((item) => (item));
+    tmpArr.push(this.state.obj);
+
+    // never mutate the state like this
+    // this.state.valueArr = [...tmpArr];
+
+    this.setState({obj: {id: 0, text:''}, valueArr: tmpArr});
+
+    event.preventDefault();
+  }
+
+  render() {
+    return(
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>Todo item: </label>
+
+          {/* input tags have their own state, so we are pointing to the react state as the only state */}
+          {/* setting tmp text variable every time we type */}
+          <input type="text" value={this.state.obj.text} onChange={this.handleChange} /> 
+
+          {/* clicking this triggers onSubmit on the form */}
+          <input type="submit" value="Submit" /> 
+        </form>
+
+        <h1>Count: {this.state.valueArr.length} </h1>
+
+
+        <ul>
+          {this.state.valueArr.map((value) => (
+            <li key={value.id}>{value.text}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <CustomForm />,
   document.getElementById('root')
 );
 

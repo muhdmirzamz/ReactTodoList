@@ -1,6 +1,12 @@
 ## React Todo List  
 
-### CHANGELOG  
+### CHANGELOG
+
+4 July 2020:
+- Input textfield auto erases after submitting
+- Refactored ```onSubmit``` code
+- Fixed: changed ```<input>``` tag type to 'text' instead of text value
+  
 3 July 2020:  
 - Initial commit
 
