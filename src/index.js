@@ -28,6 +28,7 @@ class CustomForm extends React.Component {
     // never mutate the state like this
     // this.state.valueArr = [...tmpArr];
 
+    // resets the text and puts new array
     this.setState({obj: {id: 0, text:''}, valueArr: tmpArr});
 
     event.preventDefault();
@@ -35,26 +36,26 @@ class CustomForm extends React.Component {
 
   render() {
     return(
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Todo item: </label>
+      <div id="main-div">
+        <div id="inner-div">
+          <form onSubmit={this.handleSubmit}>
+            {/* input tags have their own state, so we are pointing to the react state as the only state */}
+            {/* setting tmp text variable every time we type */}
+            <input id="text-input" type="text" value={this.state.obj.text} placeholder="Enter todo item" onChange={this.handleChange} /> 
 
-          {/* input tags have their own state, so we are pointing to the react state as the only state */}
-          {/* setting tmp text variable every time we type */}
-          <input type="text" value={this.state.obj.text} onChange={this.handleChange} /> 
+            {/* clicking this triggers onSubmit on the form */}
+            <input type="submit" value="Add item" /> 
+          </form>
 
-          {/* clicking this triggers onSubmit on the form */}
-          <input type="submit" value="Submit" /> 
-        </form>
-
-        <h1>Count: {this.state.valueArr.length} </h1>
+          <h1>Count: {this.state.valueArr.length} </h1>
 
 
-        <ul>
-          {this.state.valueArr.map((value) => (
-            <li key={value.id}>{value.text}</li>
-          ))}
-        </ul>
+          <ul>
+            {this.state.valueArr.map((value) => (
+              <li key={value.id}>{value.text}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }

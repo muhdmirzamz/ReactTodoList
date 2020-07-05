@@ -2,6 +2,10 @@
 
 ### CHANGELOG
 
+5 July 2020:
+- Changed submit button text to "add item"
+- Centralised todo UI
+
 4 July 2020:
 - Input textfield auto erases after submitting
 - Refactored ```onSubmit``` code
