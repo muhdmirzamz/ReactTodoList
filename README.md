@@ -1,6 +1,12 @@
 ## React Todo List  
 
+[Sample screenshot](main_screenshot.png)
+
 ### CHANGELOG
+7 July 2020:
+- Added a background for list items
+- Added main picture in README
+- Cleaned up code
 
 5 July 2020:
 - Changed submit button text to "add item"

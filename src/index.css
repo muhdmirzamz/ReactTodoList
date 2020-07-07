@@ -12,17 +12,10 @@ code {
     monospace;
 }
 
-#main-div {
-  /* margin: 0 auto; */
-  /* background-color: red; */
-}
-
 #inner-div {
   width: 30%;
 
   margin: 0 auto;
-
-  /* background-color: blue; */
 }
 
 #text-input {
@@ -36,6 +29,15 @@ code {
   font-size: 20px;
 }
 
+ul {
+  padding: 0;
+}
+
 ul li {
   font-size: 20px;
+
+  list-style-type: none;
+
+  background-color: #f2f2f2;
 }
+

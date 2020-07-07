@@ -36,7 +36,7 @@ class CustomForm extends React.Component {
 
   render() {
     return(
-      <div id="main-div">
+      <div>
         <div id="inner-div">
           <form onSubmit={this.handleSubmit}>
             {/* input tags have their own state, so we are pointing to the react state as the only state */}
@@ -46,9 +46,6 @@ class CustomForm extends React.Component {
             {/* clicking this triggers onSubmit on the form */}
             <input type="submit" value="Add item" /> 
           </form>
-
-          <h1>Count: {this.state.valueArr.length} </h1>
-
 
           <ul>
             {this.state.valueArr.map((value) => (
