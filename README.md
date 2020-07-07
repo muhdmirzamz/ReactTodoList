@@ -2,6 +2,8 @@
 
 ![Sample screenshot](main_screenshot.png)
 
+A simple todo list using React. There is no storing of data. Everything resets upon refresh.
+
 ### CHANGELOG
 7 July 2020:
 - Added a background for list items
