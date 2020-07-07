@@ -1,6 +1,6 @@
 ## React Todo List  
 
-[Sample screenshot](main_screenshot.png)
+![Sample screenshot](main_screenshot.png)
 
 ### CHANGELOG
 7 July 2020:
